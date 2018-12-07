@@ -23,18 +23,18 @@ interface ObjectConstructor {
 
 Example:
 
-```
+```typescript
 type Point = {
   x: number,
   y: number
 };
 type PointMap = { [key: string]: Point };
-​
+
 const foo: PointMap = {
   "1": { x: 5, y: 6 },
   "2": { x: 7, y: 8 }
 };
-​
+
 Object.values(foo).map(p => {
   return p.x;
   // Flow 0.86: ^ Cannot get `p.x` because property `x` is missing in mixed [1].

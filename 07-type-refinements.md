@@ -34,14 +34,14 @@ if (isString(foo)) {
 
 Both type checkers need a special return type indicating a refinement:
 
-```
+```typescript
 // TypeScript
 function isString(foo: Foo): foo is string {
     return typeof foo === "string";
 }
 ```
 
-```
+```javascript
 // Flow
 function isString(foo: Foo): %checks {
     return typeof foo === "string";

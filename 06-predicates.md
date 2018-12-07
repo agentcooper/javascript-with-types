@@ -1,11 +1,11 @@
 # Predicates
 
-```
+```javascript
 const arr = [1.1, 2.2, null, 3.3, 4.4];
-​
+
 arr.map(n => n.toFixed(2));
 arr.filter(Boolean).map(n => n.toFixed(2));
-​
+
 /*
 TS 3.1:
   ❌errors on both line 3 and 4
@@ -23,9 +23,9 @@ filter(callbackfn: typeof Boolean): Array<$NonMaybeType<T>>;
 
 What if we try a custom predicate function?
 
-```
+```javascript
 const arr = [1.1, 2.2, null, 3.3, 4.4];
-​
+
 arr.filter(n => Boolean(n)).map(n => n.toFixed(2));
 // 😢 Flow: Cannot call `n.toFixed` because property `toFixed` is missing in null [1].
 ```

@@ -16,7 +16,7 @@ function renderHTML(state: State): string {
 }
 /*
 TS 3.1 = OK: no errors
-​
+
 Flow 0.86 = Not OK:
 3: function renderHTML(state: State): string {
                                       ^ Cannot expect string as the return type of function
@@ -37,9 +37,11 @@ This can be improved by introducing a helper function:
 
 ```typescript
 type State = "loading" | "ready" | "error" | "warning";
+
 function assertUnreachable(x: never): never {
   throw new Error("Didn't expect to get here");
 }
+
 function renderHTML(state: State): string {
   switch (state) {
     case "loading":
@@ -58,11 +60,11 @@ Flow's equivalent of `never` is called `empty`:
 
 ```javascript
 type State = "loading" | "ready" | "error" | "warning";
-​
+
 function assertUnreachable(x: empty): empty {
     throw new Error("Didn't expect to get here");
 }
-​
+
 function renderHTML(state: State): string {
     switch (state) {
         case "loading":
